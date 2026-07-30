@@ -7,10 +7,10 @@ FROM ubuntu:latest
 RUN \
     --mount=type=cache,target=/var/cache/apt,sharing=locked \
     --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    apt update \
-    && apt install -y --no-install-recommends inkscape make texlive-full \
+    apt-get update \
+    && apt-get install -y --no-install-recommends inkscape make texlive-full \
     # Removing documentation packages afterwards is a bit hacky, \
     # but it adds overhead only when building the image. \
-    && apt --purge remove -y .\*-doc$ \
-    # && apt clean \
+    && apt-get --purge remove -y .\*-doc$ \
+    # && apt-get clean \
     # && rm -rf /var/lib/apt/lists/*
