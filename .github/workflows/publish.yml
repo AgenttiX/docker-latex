@@ -56,4 +56,4 @@ jobs:
           subject-name: ghcr.io/${{ github.repository }}
           subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
-          sbom-path: "sbom.json"
+          # sbom-path: "sbom.json"
