@@ -10,7 +10,7 @@ RUN \
     rm -f /etc/apt/apt.conf.d/docker-clean \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-        inkscape make texlive-latex-extra texlive-latex-recommended
+        inkscape latexmk make texlive-latex-extra texlive-latex-recommended
     # Removing documentation packages afterwards is a bit hacky, \
     # but it adds overhead only when building the image. \
     # && apt-get --purge remove -y .\*-doc$ \
