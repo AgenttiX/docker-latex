@@ -48,7 +48,8 @@ jobs:
           provenance: mode=max
           pull: true
           push: true
-          sbom: true
+          # texlive-full contains too many files for the SBOM to fit within the Docker limits.
+          # sbom: true
           tags: ${{ steps.meta.outputs.tags }}
       - name: Generate artifact attestation
         uses: actions/attest@v4
