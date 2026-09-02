@@ -36,7 +36,7 @@ jobs:
         with:
           images: |
             agenttix/latex
-            ghcr.io/${{ github.repository }}
+            ghcr.io/agenttix/latex
       - name: Build and push Docker images
         id: build
         uses: docker/build-push-action@v7
