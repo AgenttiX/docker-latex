@@ -7,6 +7,7 @@ jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
     runs-on: ubuntu-latest
+    timeout-minutes: 120  # 2 h, as the job takes about 1 h 20 min
     environment: Deploy
     permissions:
       artifact-metadata: write
