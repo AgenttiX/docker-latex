@@ -1,8 +1,8 @@
 name: Publish Docker image
-
 on:
   push:
-
+env:
+  IMAGE_NAME: "agenttix/latex"
 jobs:
   push_to_registries:
     name: Push Docker image to multiple registries
@@ -35,8 +35,8 @@ jobs:
         uses: docker/metadata-action@v6
         with:
           images: |
-            agenttix/latex
-            ghcr.io/agenttix/latex
+            ${{ env.IMAGE_NAME }}
+            ghcr.io/${{ env.IMAGE_NAME }}
       - name: Build and push Docker images
         id: build
         uses: docker/build-push-action@v7
@@ -53,7 +53,7 @@ jobs:
       - name: Generate artifact attestation
         uses: actions/attest@v4
         with:
-          subject-name: ghcr.io/agenttix/latex
+          subject-name: ghcr.io/${{ env.IMAGE_NAME }}
           subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
           # sbom-path: "sbom.json"
