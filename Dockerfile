@@ -59,5 +59,5 @@ apt-get purge -y equivs
 apt-get autoremove -y --purge
 
 apt-get install -y --no-install-recommends \
-    inkscape latexmk make texlive-full
+    inkscape latexmk make pandoc texlive-full
 EOF
