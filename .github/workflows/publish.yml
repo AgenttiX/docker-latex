@@ -53,7 +53,7 @@ jobs:
       - name: Generate artifact attestation
         uses: actions/attest@v4
         with:
-          subject-name: ghcr.io/${{ github.repository }}
+          subject-name: ghcr.io/agenttix/latex
           subject-digest: ${{ steps.build.outputs.digest }}
           push-to-registry: true
           # sbom-path: "sbom.json"
